@@ -17,7 +17,7 @@ variable "hcloud_token" {
 }
 
 variable "ssh_keys" {
-    default = ["Talha"]
+    default = ["XXX-YOUR-SSH-KEY-NAME-XXX"]
     type = list
 }
 
@@ -30,7 +30,7 @@ resource "hcloud_server" "web-server" {
     image = "debian-10"
     server_type = "cx11"
     location = "nbg1"
-    ssh_keys = ["Talha"]
+    ssh_keys = var.ssh_keys
     user_data = <<-EOF
         #!/bin/bash
         sudo apt update -y
